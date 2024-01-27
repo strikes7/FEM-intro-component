@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/desktop-style.css" media="screen and (min-width: 60em)">
+  <title>Intro component with sign up form</title>
+
+</head>
+<body>
+<main>
+  <h1 class="site__title">Learn to code by watching others</h1>
+  <p class="site__phrase">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+    but understanding how developers think is invaluable.</p>
+  <p class="site__banner"><b>Try it free 7 days</b> then $20/mo. thereafter</p>
+    <form action="" class="register">
+      <div class="input-wrapper">
+        <label for="first-name">first name</label>
+        <input type="text" name="firstName" id="first-name" placeholder="First Name">
+        <img src="assets/images/icon-error.svg" alt=" " class="error-icon">
+      </div>
+      <div class="input-error-wrapper">
+        <p class="input-error-message--first-name" id="first-name-error" aria-hidden="true">First name cannot be empty</p>
+      </div>
+      <div class="input-wrapper">
+        <label for="last-name">last name</label>
+        <input type="text" name="lastName" id="last-name" placeholder="Last Name">
+        <img src="assets/images/icon-error.svg" alt=" " class="error-icon">
+      </div>
+      <div class="input-error-wrapper">
+        <p class="input-error-message--last-name" id="last-name-error" aria-hidden="true">Last name cannot be empty</p>
+      </div>
+      <div class="input-wrapper">
+        <label for="email">email address</label>
+        <input type="email" name="email" id="email" placeholder="Email Address">
+        <img src="assets/images/icon-error.svg" alt=" " class="error-icon">
+      </div>
+      <div class="input-error-wrapper">
+        <p class="input-error-message--email-address" id="email-error" aria-hidden="true">Looks like this is not an email</p>
+      </div>
+      <div class="input-wrapper">
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" placeholder="Password">
+        <img src="assets/images/icon-error.svg" alt=" " class="error-icon">
+      </div>
+      <div class="input-error-wrapper">
+        <p class="input-error-message--password" id="password-error" aria-hidden="true">Password cannot be empty</p>
+      </div>
+      <button type="submit" id="sign-in-btn" class="btn-claim-trial">CLAIM YOUR FREE TRIAL</button>
+      <p class="agreement-text">By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
+    </form>
+</main>
+</body>
+<script src="assets/js/script.js"></script>
+</html>

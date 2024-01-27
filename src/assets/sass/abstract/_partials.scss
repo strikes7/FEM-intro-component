@@ -1,0 +1,7 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+@mixin font-style{
+    color: $clr-neutral-100;
+    text-align: center;
+}

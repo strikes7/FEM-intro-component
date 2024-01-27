@@ -1,0 +1,162 @@
+body {
+  display: flex;
+  margin: 0;
+  background-color: hsl(0, 100%, 74%);
+  background-image: url("../images/bg-intro-mobile.png");
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  width: min(88%, 69.6875rem);
+  margin-block-start: 4.375rem;
+  margin-inline: auto;
+  display: grid;
+}
+
+.site__title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+.site__phrase {
+  margin-block: 0 2.7rem;
+  font-weight: 500;
+  line-height: 1.7;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+.site__banner {
+  box-sizing: border-box;
+  margin-block-end: 1.5rem;
+  padding: 1rem 4.8125rem;
+  border-radius: 0.5rem;
+  background-color: hsl(248, 32%, 49%);
+  line-height: 1.7;
+  box-shadow: 0 0.55rem 0rem -0.05rem hsla(0, 0%, 0%, 0.2);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+}
+
+.register {
+  display: grid;
+  grid-template-rows: 1fr var(--first-name-error, 0rem) 1fr var(--last-name-error, 0rem) 1fr var(--email-address-error, 0rem) 1fr var(--password-error, 0rem);
+  position: relative;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.5rem;
+  padding: 0.375rem 1.375rem 1.375rem 1.375rem;
+  box-shadow: 0 0.55rem 0rem -0.05rem hsla(0, 0%, 0%, 0.2);
+  transition: grid-template-rows 0.25 ease-in-out;
+}
+.register:has(.input-error-message--first-name[aria-hidden=false]) {
+  --first-name-error: 1.25rem;
+}
+.register:has(.input-error-message--last-name[aria-hidden=false]) {
+  --last-name-error: 1.25rem;
+}
+.register:has(.input-error-message--email-address[aria-hidden=false]) {
+  --email-address-error: 1.25rem;
+}
+.register:has(.input-error-message--password[aria-hidden=false]) {
+  --password-error: 1.25rem;
+}
+
+label {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 1;
+  font-weight: 500;
+  border: 1px solid hsl(246, 25%, 77%);
+  border-radius: 0.25rem;
+  outline-color: hsl(248, 32%, 49%);
+  margin-block-start: 1rem;
+  color: hsl(248, 32%, 49%);
+}
+input[type=text][data-is-valid=false],
+input[type=email][data-is-valid=false],
+input[type=password][data-is-valid=false] {
+  border-color: hsl(0, 100%, 74%);
+}
+input[type=text]::placeholder,
+input[type=email]::placeholder,
+input[type=password]::placeholder {
+  color: hsl(249, 10%, 26%);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.error-icon {
+  position: absolute;
+  height: 1.375rem;
+  width: 1.375rem;
+  top: calc(50% - 0.25rem);
+  right: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[data-is-valid=false] + .error-icon {
+  opacity: 1;
+}
+
+.input-error-wrapper {
+  overflow: hidden;
+}
+
+[class^=input-error-message] {
+  padding-inline-end: 0.3rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 500;
+  text-align: right;
+  box-sizing: border-box;
+  margin-block: 0;
+  overflow: hidden;
+  color: hsl(0, 100%, 74%);
+  line-height: 2;
+}
+
+.btn-claim-trial {
+  margin-block-start: 1rem;
+  padding-block: 1.3rem 0.9rem;
+  text-align: center;
+  border: 0;
+  background-color: hsl(154, 59%, 51%);
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.45rem 0rem -0.04rem hsl(154, 34%, 51%);
+  outline-color: hsl(154, 34%, 51%);
+  outline-offset: 4px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btn-claim-trial:hover {
+  background-color: hsl(154, 65%, 68%);
+}
+
+.agreement-text {
+  margin-block: 0.9rem 0;
+  margin-inline: 1.1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.8;
+  color: hsl(246, 25%, 77%);
+}
+.agreement-text span {
+  color: hsl(0, 100%, 74%);
+}

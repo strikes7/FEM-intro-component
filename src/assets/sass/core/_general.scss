@@ -1,0 +1,9 @@
+@use "../abstract/" as *;
+
+body {
+  display: flex;
+  margin:0;
+  background-color: $clr-red-100;
+  background-image: url("../images/bg-intro-mobile.png");
+  font-family: $ff-primary;
+}

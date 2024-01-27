@@ -1,0 +1,15 @@
+@use "utilities" as * ;
+
+$fs-200: toRem(10);
+$fs-300: toRem(12);
+$fs-350: toRem(14);
+$fs-400: toRem(16);
+$fs-450: toRem(18);
+$fs-600: toRem(20);
+$fs-650: toRem(27.2);
+$fs-700: toRem(32);
+$fs-750: toRem(48);
+$fs-800: toRem(52);
+
+$ff-primary: "Poppins", sans-serif;
+

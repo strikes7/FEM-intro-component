@@ -1,0 +1,35 @@
+@use "../abstract/" as *;
+
+main{
+    width: min(88%, toRem(1115));
+    margin-block-start: toRem(70);
+    margin-inline: auto;
+    display: grid;
+}
+
+.site{
+    &__title{
+        font-size: $fs-700;
+        font-weight: 600;
+        line-height: 1.1;
+        @include font-style;
+    }
+
+    &__phrase{
+        margin-block: 0 2.7rem;
+        font-weight: 500;
+        line-height: 1.7;
+        @include font-style;
+    }
+
+    &__banner{
+        box-sizing: border-box;
+        margin-block-end: 1.5rem;
+        padding: toRem(16) toRem(77);
+        border-radius: 0.5rem;
+        background-color: $clr-blue-100;
+        line-height: 1.7;
+        box-shadow: 0 0.55rem 0rem -0.05rem $clr-neutral-200-semi; 
+        @include font-style;
+    }
+}

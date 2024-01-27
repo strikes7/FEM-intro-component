@@ -1,0 +1,135 @@
+@use "../abstract/" as *;
+
+.register{
+    display: grid;
+    grid-template-rows: 
+        1fr var(--first-name-error, 0rem) 
+        1fr var(--last-name-error, 0rem) 
+        1fr var(--email-address-error, 0rem) 
+        1fr var(--password-error, 0rem) ;
+    // grid-template-areas: 
+    //     "first-name" 1fr
+    //     "first-name--error" var(--first-name-error, 0rem) 
+    //     "last-name" 1fr 
+    //     "last-name--error" var(--last-name-error, 0rem) 
+    //     "email" 1fr
+    //     "email--error" var(--email-address-error, 0rem) 
+    //     "password" 1fr
+    //     "password--error" var(--password-error, 0rem);
+    position:relative;
+    background-color: $clr-neutral-100;
+    border-radius: .5rem;
+    padding:toRem(6) toRem(22) toRem(22) toRem(22);
+    box-shadow: 0 0.55rem 0rem -0.05rem $clr-neutral-200-semi; 
+    transition: grid-template-rows .25 ease-in-out;
+    &:has(.input-error-message--first-name[aria-hidden=false]){
+        --first-name-error: 1.25rem;
+    }
+    &:has(.input-error-message--last-name[aria-hidden=false]){
+        --last-name-error: 1.25rem;
+    }
+    &:has(.input-error-message--email-address[aria-hidden=false]){
+        --email-address-error: 1.25rem;
+    }
+    &:has(.input-error-message--password[aria-hidden=false]){
+        --password-error: 1.25rem;
+    }
+}
+
+label{
+    position:absolute;
+    opacity: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    font-family: $ff-primary;
+    line-height: 1;
+    font-weight: 500;
+    border: 1px solid $clr-blue-200;
+    border-radius: .25rem;
+    outline-color: $clr-blue-100;
+    margin-block-start: 1rem;
+    color: $clr-blue-100;
+
+    &[data-is-valid=false]{
+        border-color: $clr-red-100;
+    }
+
+    &::placeholder{
+        color: $clr-blue-300;
+    }
+}
+
+.input-wrapper{
+    position: relative;
+}
+
+.error-icon{
+    position: absolute;
+    height: toRem(22);
+    width: toRem(22);
+    top: calc(50% - 0.25rem);
+    right: 1.5rem;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+
+input[data-is-valid=false] + .error-icon{
+    opacity: 1;
+}
+
+.input-error-wrapper{
+    overflow: hidden;   
+}
+
+[class^="input-error-message"] {
+    padding-inline-end: .3rem;
+    font-size: $fs-300;
+    font-style: italic;
+    font-weight: 500;
+    text-align: right;
+    box-sizing: border-box;
+    margin-block: 0;
+    overflow: hidden;
+    color: $clr-red-100;
+    line-height: 2;
+}
+
+.btn-claim-trial{
+    margin-block-start: 1rem;
+    padding-block: 1.3rem .9rem;
+    text-align: center;
+    border: 0;
+    background-color: $clr-green-100;
+    font-weight: 600;
+    color: $clr-neutral-100;
+    border-radius: .25rem;
+    box-shadow: 0 0.45rem 0rem -0.04rem $clr-green-200; 
+    outline-color: $clr-green-200;
+    outline-offset: 4px ;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $clr-green-050;
+    }
+}
+
+.agreement-text{
+    margin-block: .9rem 0;
+    margin-inline: 1.1rem;
+    font-size: $fs-300;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.8;
+    color: $clr-blue-200;
+    & span{
+        color: $clr-red-100;
+    }
+}

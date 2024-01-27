@@ -1,0 +1,40 @@
+@use "abstract/" as *;
+
+body{
+    min-height: 100vh;
+    background-image: url("../images/bg-intro-desktop.png");
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    margin-block-start: 0;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,fit-content);
+    grid-column-gap: 5%;
+}
+
+.site{
+    &__title{
+        align-self: baseline;
+        margin-block:3.5rem 0;
+        font-size: clamp($fs-750,4vw, $fs-800);
+        text-align: left;
+        grid-row: 2;
+    }
+
+    &__phrase{
+        margin-block-start: -3.8rem;
+        text-align: left;
+        grid-row: 3;
+    }
+
+    &__banner{
+        grid-column: 2;
+    }
+}
+
+.register{
+    grid-column: 2;
+    grid-row: span 2;
+}
